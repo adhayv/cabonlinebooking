@@ -1,0 +1,67 @@
+<!-- This file is displays a webpage that the user can enter data in to book for a cab  -->
+<HTML XMLns="http://www.w3.org/1999/xHTML">
+
+<head>
+    <title>Booking Page</title>
+    <link type="text/css" rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="xhr.js"></script>
+    <script type="text/javascript" src="booking.js"></script>
+    <script type="text/javascript">
+        window.onload = function() {
+            var date = new Date();
+            //Sets current date and time in input 
+            document.getElementById("dateInput").defaultValue = date.getFullYear().toString() + '-' + (date.getMonth() + 1).toString().padStart(2, 0) +
+                '-' + date.getDate().toString().padStart(2, 0);
+
+            document.getElementById("timeInput").defaultValue = date.getHours().toString().padStart(2, 0) + ':' + date.getMinutes().toString().padStart(2, 0);
+        }
+    </script>
+</head>
+
+<body>
+    <H1>Book A Cab &nbsp;</H1>
+    <!-- User inputs data in this form for a cab booking -->
+    <form name="bookForm">
+        <div class="centerBlock">
+            <label class="labels">Customer Name:</label><br>
+            <input class="inputBox" type="text" name="cname" required>
+
+            <label class="labels"><br>Phone Number:</label><br>
+            <input class="inputBox" type="text" name="phone" required>
+
+            <label class="labels"><br>Unit Number:</label><br>
+            <input class="inputBox" type="text" name="unumber">
+
+            <label class="labels"><br>Street Number:</label><br>
+            <input class="inputBox" type="text" name="snumber" required>
+
+            <label class="labels"><br>Street Name:</label><br>
+            <input class="inputBox" type="text" name="stname" required>
+
+            <label class="labels"><br>Suburb:</label><br>
+            <input class="inputBox" type="text" name="sbname">
+
+            <label class="labels"><br>Destination Suburb:</label><br>
+            <input class="inputBox" type="text" name="dsbname">
+
+            <label class="labels"><br>Pick-Up Date:</label><br>
+            <input class="inputBox" type="date" id="dateInput" name="date" required>
+
+            <label class="labels"><br>Pick-Up Time:</label><br>
+            <input class="inputBox" type="time" id="timeInput" name="time" required>
+
+            <br><br>
+            <!-- This on click sends the data to the file provided to be stored -->
+            <input name="submit" type="button" onclick="getData('booking.php', 'targetDiv', cname.value, 
+			phone.value, unumber.value, snumber.value, stname.value, sbname.value, dsbname.value,
+			time.value, date.value)" value="Book">
+        </div>
+    </form>
+    <div id="targetDiv" class="betterText">
+        <p name="reference">
+            <!-- Conformation for the booking will appear here-->
+        </p>
+    </div>
+</body>
+
+</HTML>

@@ -1,0 +1,41 @@
+Creating Table
+CREATE TABLE IF NOT EXISTS booking(
+		BookingRef INT PRIMARY KEY AUTO_INCREMENT,
+		CusName VARCHAR(100) NOT NULL,
+		PhoneNo INT(15) NOT NULL,
+		UnitNo INT(10),
+		StreetNo INT(10) NOT NULL,
+		StreetName VARCHAR(100) NOT NULL,
+		SubName VARCHAR(100) NOT NULL,
+		DesSubName VARCHAR(100) NOT NULL,
+		PUDate DATE NOT NULL,
+		PUTime TIME NOT NULL,
+		TimeBooked DATETIME NOT NULL,
+		Status VARCHAR(50) DEFAULT 'unassigned'
+		);
+
+Inserting Data
+INSERT INTO booking (CusName, PhoneNo, UnitNo, StreetNo, StreetName, SubName, DesSubName, PUDate, PUTime, TimeBooked, Status)
+VALUES ('$name', '$phone', '$unitNo', '$streetNo', '$streetName', '$subName', '$desSubName', '$date', '$time', '$timeBooked', '$status');
+
+Getting newly inserted data
+SELECT BookingRef, PUTime, PUDate 
+FROM booking 
+ORDER BY BookingRef DESC 
+LIMIT 1;
+
+Getting unassigned and in-between 2 hours
+SELECT *
+FROM booking
+WHERE STATUS = 'unassigned'
+AND (CAST( PUDate AS DATETIME ) + CAST( PUTime AS DATETIME))
+BETWEEN NOW() AND DATE_ADD( NOW() , INTERVAL 2 HOUR );
+
+Getting customer booking depending on input
+SELECT * FROM booking 
+WHERE BookingRef=$refNo;
+
+Updating Assigned 
+UPDATE booking
+SET Status = 'assigned'
+WHERE BookingRef=$refNo;

@@ -1,0 +1,79 @@
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    color: rgb(195, 248, 195);
+    background-color: rgb(49, 48, 48);
+    text-align: center;
+}
+
+label {
+    padding-top: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+input[type=text],
+input[type=date],
+input[type=time] {
+    width: 250px;
+    height: 25px;
+    border: 2px solid rgb(187, 183, 183);
+    border-radius: 2px;
+    margin-bottom: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+input[type=button] {
+    width: 200px;
+    background-color: #5bc052;
+    color: white;
+    padding: 10px 15px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+form {
+    text-align: center;
+}
+
+table,
+th,
+td {
+    border: 1px solid rgb(214, 211, 211);
+    padding: 8px;
+}
+
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #464549;
+    color: white;
+}
+
+tr {
+    background-color: rgb(241, 241, 220);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.centerBlock {
+    margin: auto;
+    width: 50%;
+    border: 2px solid #9fdd93;
+    border-radius: 10px;
+    padding: 8px;
+}
+
+.betterText {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    color: rgb(80, 80, 85);
+    text-align: center;
+}

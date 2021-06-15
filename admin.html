@@ -1,0 +1,25 @@
+<HTML XMLns="http://www.w3.org/1999/xHTML">
+
+<head>
+    <title>Admin Page</title>
+    <script type="text/javascript" src="xhr.js"></script>
+    <script type="text/javascript" src="admin.js"></script>
+    <link type="text/css" rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <H1>Admin Search</H1>
+    <!-- This form allows the admin to input nothing or a reference number to get data about the customers-->
+    <form>
+        <div class="centerBlock">
+            <label>Search Bookings: <br><input type="text" name="bsearch"></label>
+            <br><input name="sbutton" type="button" onclick="findData('admin.php','targetDiv', 
+			bsearch.value)" value="Search">
+        </div>
+    </form>
+    <div class="content, betterText" id="targetDiv">
+        <p></p>
+    </div>
+</body>
+
+</HTML>
